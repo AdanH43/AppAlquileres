@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Vehiculo {
-
-    private Map<String, Vehiculo> mapaVehiculos = new HashMap<>();
     private String matricula;
     private String modelo;
     private String marca;
@@ -50,7 +48,5 @@ public class Vehiculo {
         return tipoMotor;
     }
 
-    public Map<String, Vehiculo> getMapaVehiculos() {
-        return mapaVehiculos;
-    }
+
 }
