@@ -14,15 +14,14 @@ public class Cliente {
     private List<Tarjeta> listaTarjetas;
 
 
-    public Cliente(String nombre, String apellidos, String email, String telefono, String dni) {
+    public Cliente(String nombre, String apellidos, String email, String telefono, String dni, List<Tarjeta> listaTarjetas) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
         this.telefono = telefono;
         this.dni = dni;
+        this.listaTarjetas = listaTarjetas;
     }
-
-
 
     public void añadirTarjeta(Tarjeta tarjeta) {
         listaTarjetas.add(tarjeta);

@@ -1,6 +1,7 @@
 package com.politecnicomalaga.appalquileres.Model;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Empresa {
@@ -15,9 +16,9 @@ public class Empresa {
         this.mapaClientes = mapaClientes;
     }
 
-    public void darAltaCliente(String nombre, String apellidos, String email, String telefono, String dni) {
-        Cliente cliente = new Cliente(nombre, apellidos, email, telefono, dni);
-        mapaClientes.put(dni, cliente);
+    public void darAltaCliente(String nombre, String apellidos, String email, String telefono, String dni, List<Tarjeta> listaTarjetas) {
+        Cliente cliente = new Cliente(nombre, apellidos, email, telefono, dni, listaTarjetas);
+        mapaClientes.put(apellidos, cliente);
     }
 
     public void darAltaVehiculo(String matricula, String modelo, String marca, double kmsRecorridos, double precioDia, Vehiculo.TipoMotor tipoMotor) {
