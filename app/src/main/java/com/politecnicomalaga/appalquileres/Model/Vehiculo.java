@@ -3,18 +3,21 @@ package com.politecnicomalaga.appalquileres.Model;
 public class Vehiculo {
 
     private String matricula;
-
     private String modelo;
     private String marca;
-    private String kmsRecorrdidos;
-    private String precioDia;
-    private Enum tipoMotor;
+    private double kmsRecorridos;
+    private double precioDia;
+    private TipoMotor tipoMotor;
 
-    public Vehiculo(String matricula, String modelo, String marca, String kmsRecorrdidos, String precioDia, Enum tipoMotor) {
+    public enum TipoMotor {
+        ELECTRICO, HIBRIDO_ENCHUFABLE, HIBRIDO, GASOLINA, DIESEL
+    }
+
+    public Vehiculo(String matricula, String modelo, String marca, double kmsRecorridos, double precioDia, TipoMotor tipoMotor) {
         this.matricula = matricula;
         this.modelo = modelo;
         this.marca = marca;
-        this.kmsRecorrdidos = kmsRecorrdidos;
+        this.kmsRecorridos = kmsRecorridos;
         this.precioDia = precioDia;
         this.tipoMotor = tipoMotor;
     }
@@ -31,15 +34,15 @@ public class Vehiculo {
         return marca;
     }
 
-    public String getKmsRecorrdidos() {
-        return kmsRecorrdidos;
+    public double getKmsRecorridos() {
+        return kmsRecorridos;
     }
 
-    public String getPrecioDia() {
+    public double getPrecioDia() {
         return precioDia;
     }
 
-    public Enum getTipoMotor() {
+    public TipoMotor getTipoMotor() {
         return tipoMotor;
     }
 }

@@ -5,14 +5,14 @@ public class Coche extends Vehiculo {
     private String plazasMaximas;
     private String numPuertas;
     private String volumenMaletero;
-    private Enum tipoCoche;
+    private TipoCoche tipoCoche;
 
-    public Coche(String matricula, String modelo, String marca, String kmsRecorrdidos, String precioDia, Enum tipoMotor) {
-        super(matricula, modelo, marca, kmsRecorrdidos, precioDia, tipoMotor);
+    enum TipoCoche {
+        UTILITARIO, BERLINA, MONOVOLUMEN, SUV
     }
 
-    public Coche(String matricula, String modelo, String marca, String kmsRecorrdidos, String precioDia, Enum tipoMotor, String plazasMaximas, String numPuertas, String volumenMaletero, Enum tipoCoche) {
-        super(matricula, modelo, marca, kmsRecorrdidos, precioDia, tipoMotor);
+    public Coche(String matricula, String modelo, String marca, double kmsRecorridos, double precioDia, TipoMotor tipoMotor, String plazasMaximas, String numPuertas, String volumenMaletero, TipoCoche tipoCoche) {
+        super(matricula, modelo, marca, kmsRecorridos, precioDia, tipoMotor);
         this.plazasMaximas = plazasMaximas;
         this.numPuertas = numPuertas;
         this.volumenMaletero = volumenMaletero;
