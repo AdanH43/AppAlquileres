@@ -8,4 +8,12 @@ public class Camion extends Vehiculo {
         this.cargaMaxima = cargaMaxima;
         this.longitud = longitud;
     }
+
+    public double getCargaMaxima() {
+        return cargaMaxima;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
 }

@@ -10,4 +10,12 @@ public class Furgon extends Vehiculo{
         this.cargaMaxima = cargaMaxima;
         this.plazasAsientos = plazasAsientos;
     }
+
+    public double getCargaMaxima() {
+        return cargaMaxima;
+    }
+
+    public int getPlazasAsientos() {
+        return plazasAsientos;
+    }
 }
