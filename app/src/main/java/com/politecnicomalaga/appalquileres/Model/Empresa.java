@@ -16,8 +16,8 @@ public class Empresa {
         this.mapaClientes = mapaClientes;
     }
 
-    public void darAltaCliente(String nombre, String apellidos, String email, String telefono, String dni, List<Tarjeta> listaTarjetas) {
-        Cliente cliente = new Cliente(nombre, apellidos, email, telefono, dni, listaTarjetas);
+    public void darAltaCliente(String nombre, String apellidos, String email, String telefono, String dni) {
+        Cliente cliente = new Cliente(nombre, apellidos, email, telefono, dni );
         mapaClientes.put(apellidos, cliente);
     }
 
