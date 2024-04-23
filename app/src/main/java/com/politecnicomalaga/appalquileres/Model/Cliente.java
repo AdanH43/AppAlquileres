@@ -1,8 +1,8 @@
 package com.politecnicomalaga.appalquileres.Model;
 
-import java.util.HashMap;
+import android.widget.TextView;
+
 import java.util.List;
-import java.util.Map;
 
 public class Cliente {
 

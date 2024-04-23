@@ -9,9 +9,28 @@
     <TextView
         android:id="@+id/nombre"
         android:text="TextView"
+        style="@style/day_title"
         />
     <TextView
         android:id="@+id/apellidos"
         android:text="TextView"
+        style="@style/day_title"
         />
+    <TextView
+        android:id="@+id/dni"
+        android:text="TextView"
+        style="@style/day_title"
+        />
+    <TextView
+        android:id="@+id/telefono"
+        android:text="TextView"
+        style="@style/day_title"
+        />
+    <TextView
+        android:id="@+id/email"
+        android:text="TextView"
+        style="@style/day_title"
+        />
+
+
 </LinearLayout>
