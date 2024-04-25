@@ -24,10 +24,6 @@ public class MainClientes extends AppCompatActivity {
     private HashMap<String, Cliente> mHashMap;
     private static MainActivity myActiveActivity;
 
-
-
-
-
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,15 +45,5 @@ public class MainClientes extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
-
-
-
-
     }
 }
