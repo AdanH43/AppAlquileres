@@ -1,5 +1,6 @@
 package com.politecnicomalaga.appalquileres.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.politecnicomalaga.appalquileres.Control.MainController;
 import com.politecnicomalaga.appalquileres.Model.Cliente;
 import com.politecnicomalaga.appalquileres.R;
 
@@ -39,6 +41,8 @@ public class MainAddClientes extends AppCompatActivity {
                 String dni = editTextDNI.getText().toString();
 
                 Cliente nuevoCliente = new Cliente(nombre, apellidos, email, telefono, dni);
+                MainController.getSingleton().addCliente(nuevoCliente);
+                finish();
             }
         });
 

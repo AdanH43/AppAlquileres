@@ -9,7 +9,7 @@
         android:id="@+id/cl_header"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/rv_clientes"
+        app:layout_constraintBottom_toTopOf="@id/rv_vehiculos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintHorizontal_bias="1.0"
@@ -18,44 +18,50 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/tv_clientDesc"
+            android:id="@+id/tv_vehDesc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="15dp"
-            android:text="Gestion de Clientes"
+            android:text="Gestión de Vehículos"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btAddCliente"
+            app:layout_constraintEnd_toStartOf="@+id/btn_addVehiculo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btAddCliente"
+            android:id="@+id/btn_addVehiculo"
             android:layout_width="222dp"
             android:layout_height="53dp"
             android:gravity="center"
-            android:text="Añadir Cliente"
-            app:layout_constraintBottom_toTopOf="@+id/edt_apellido"
+            android:text="Añadir Vehículo"
+            app:layout_constraintBottom_toTopOf="@id/edt_matricula"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Spinner
+            android:id="@+id/spinnerTipoVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_matricula"
+            app:layout_constraintEnd_toStartOf="@+id/edt_matricula"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vehDesc" />
+
         <EditText
-            android:id="@+id/edt_apellido"
+            android:id="@+id/edt_matricula"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Busca por Apellido"
+            android:hint="Buscar por Matrícula"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_clientDesc" />
-
+            app:layout_constraintStart_toStartOf="@id/spinnerTipoVehiculo"
+            app:layout_constraintTop_toBottomOf="@id/tv_vehDesc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_clientes"
+        android:id="@+id/rv_vehiculos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,6 +70,5 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl_header" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

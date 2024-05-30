@@ -17,17 +17,16 @@ import java.util.List;
 
 public class ClienteAdapter extends RecyclerView.Adapter<ClienteViewHolder> {
 
-    private HashMap<String,Cliente> mHashMap;
+
     private List<Cliente> clientesList;
     private LayoutInflater mInflater;
 
+    private List<Cliente> clientesFiltrados;
+
     public ClienteAdapter(Context context, HashMap<String, Cliente> hashMap) {
         mInflater = LayoutInflater.from(context);
-        if (hashMap != null) {
-            clientesList = new ArrayList<>(hashMap.values());
-        } else {
-            clientesList = new ArrayList<>();
-        }
+        clientesList = new ArrayList<>(hashMap.values());
+        clientesFiltrados = new ArrayList<>(clientesList);
     }
 
     @NonNull
@@ -53,4 +52,21 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteViewHolder> {
         return clientesList.size();
     }
 
+    public void updateData(HashMap<String, Cliente> hashMap) {
+        clientesList = new ArrayList<>(hashMap.values());
+    }
+
+    public void filtrarPorApellido(String filtro) {
+        clientesFiltrados.clear();
+        if (filtro.isEmpty()) {
+            clientesFiltrados.addAll(clientesList);
+        } else {
+            for (Cliente cliente : clientesList) {
+                if (cliente.getApellidos().toLowerCase().contains(filtro)) {
+                    clientesFiltrados.add(cliente);
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
 }
