@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipo_motor_array">
+        <item>Electrico</item>
+        <item>Hibrido_Enchufable</item>
+        <item>Hibrido</item>
+        <item>Gasolina</item>
+        <item>Diesel</item>
+    </string-array>
+    <string-array name="tipo_vehiculo_array">
+        <item>Coche</item>
+        <item>Furgón</item>
+        <item>Camión</item>
+    </string-array>
+
+    <string-array name="tipos_vehiculo">
+        <item>Coche</item>
+        <item>Furgón</item>
+        <item>Camión</item>
+    </string-array>
+</resources>

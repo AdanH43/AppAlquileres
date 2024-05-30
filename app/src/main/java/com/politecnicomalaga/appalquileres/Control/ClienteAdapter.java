@@ -54,6 +54,7 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteViewHolder> {
 
     public void updateData(HashMap<String, Cliente> hashMap) {
         clientesList = new ArrayList<>(hashMap.values());
+        clientesFiltrados = new ArrayList<>(clientesList);
     }
 
     public void filtrarPorApellido(String filtro) {

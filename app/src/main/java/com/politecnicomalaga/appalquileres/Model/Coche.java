@@ -7,7 +7,7 @@ public class Coche extends Vehiculo {
     private String volumenMaletero;
     private TipoCoche tipoCoche;
 
-    enum TipoCoche {
+    public enum TipoCoche {
         UTILITARIO, BERLINA, MONOVOLUMEN, SUV
     }
 

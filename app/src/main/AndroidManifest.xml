@@ -23,5 +23,7 @@
         </activity>
         <activity android:name=".View.MainClientes"> </activity>
         <activity android:name=".View.MainAddClientes" > </activity>
+        <activity android:name=".View.MainVehiculos" > </activity>
+        <activity android:name=".View.MainAddVehiculos" > </activity>
     </application>
 </manifest>

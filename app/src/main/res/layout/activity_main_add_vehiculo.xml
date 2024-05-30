@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <EditText
+        android:id="@+id/edtMatricula"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Matrícula"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <EditText
+        android:id="@+id/edtModelo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Modelo"
+        app:layout_constraintTop_toBottomOf="@+id/edtMatricula"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <EditText
+        android:id="@+id/edtMarca"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Marca"
+        app:layout_constraintTop_toBottomOf="@+id/edtModelo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <EditText
+        android:id="@+id/edtKmsRecorridos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Kilómetros recorridos"
+        app:layout_constraintTop_toBottomOf="@+id/edtMarca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <EditText
+        android:id="@+id/edtPrecioDia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Precio por día"
+        app:layout_constraintTop_toBottomOf="@+id/edtKmsRecorridos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <Spinner
+        android:id="@+id/spnTipoMotor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipo_motor_array"
+        app:layout_constraintTop_toBottomOf="@+id/edtPrecioDia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <Spinner
+        android:id="@+id/spnTipoVehiculo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipo_vehiculo_array"
+        app:layout_constraintTop_toBottomOf="@+id/spnTipoMotor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <EditText
+        android:id="@+id/edtAtributo1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Atributo 1"
+        app:layout_constraintTop_toBottomOf="@+id/spnTipoVehiculo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <EditText
+        android:id="@+id/edtAtributo2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Atributo 2"
+        app:layout_constraintTop_toBottomOf="@+id/edtAtributo1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <Button
+        android:id="@+id/btnSaveVehiculo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Guardar Vehículo"
+        app:layout_constraintTop_toBottomOf="@+id/edtAtributo2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

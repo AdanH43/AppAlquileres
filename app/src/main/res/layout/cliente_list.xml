@@ -8,27 +8,27 @@
 
     <TextView
         android:id="@+id/nombre"
-        android:text="TextView"
+        android:text="Nombre"
         style="@style/day_title"
         />
     <TextView
         android:id="@+id/apellidos"
-        android:text="TextView"
+        android:text="Apellidos"
         style="@style/day_title"
         />
     <TextView
         android:id="@+id/dni"
-        android:text="TextView"
+        android:text="DNI"
         style="@style/day_title"
         />
     <TextView
         android:id="@+id/telefono"
-        android:text="TextView"
+        android:text="Telefono"
         style="@style/day_title"
         />
     <TextView
         android:id="@+id/email"
-        android:text="TextView"
+        android:text="Email"
         style="@style/day_title"
         />
 

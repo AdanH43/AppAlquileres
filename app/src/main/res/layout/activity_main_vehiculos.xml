@@ -25,12 +25,12 @@
             android:padding="15dp"
             android:text="Gestión de Vehículos"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btn_addVehiculo"
+            app:layout_constraintEnd_toStartOf="@+id/btaddVehiculo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_addVehiculo"
+            android:id="@+id/btaddVehiculo"
             android:layout_width="222dp"
             android:layout_height="53dp"
             android:gravity="center"
