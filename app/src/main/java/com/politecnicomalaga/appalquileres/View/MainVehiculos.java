@@ -37,11 +37,14 @@ public class MainVehiculos extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.rv_vehiculos);
         Button btnAddVehiculo = findViewById(R.id.btaddVehiculo);
-        String[] opcionesSpinner = getResources().getStringArray(R.array.tipo_vehiculo_array);
+
         spnTipoVehiculo = findViewById(R.id.spinnerTipoVehiculo);
+        String[] opcionesSpinner = getResources().getStringArray(R.array.tipo_vehiculo_array);
         ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opcionesSpinner);
         adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnTipoVehiculo.setAdapter(adapterSpinner);
+
+
         edtBuscarMatricula = findViewById(R.id.edt_matricula);
 
         mVehiculosMap = MainController.getSingleton().getVehiculos();

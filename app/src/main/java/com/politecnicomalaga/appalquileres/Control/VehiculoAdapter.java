@@ -71,9 +71,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoViewHolder> {
     public void filtrarPorTipo(String tipoVehiculo) {
         vehiculosFiltrados.clear();
         for (Vehiculo vehiculo : vehiculoList) {
-            if (tipoVehiculo.equalsIgnoreCase("coche") && vehiculo instanceof Coche ||
-                    tipoVehiculo.equalsIgnoreCase("furgón") && vehiculo instanceof Furgon ||
-                    tipoVehiculo.equalsIgnoreCase("camión") && vehiculo instanceof Camion) {
+            if (tipoVehiculo.equalsIgnoreCase("coche") && vehiculo instanceof Coche || tipoVehiculo.equalsIgnoreCase("furgón") && vehiculo instanceof Furgon || tipoVehiculo.equalsIgnoreCase("camión") && vehiculo instanceof Camion) {
                 vehiculosFiltrados.add(vehiculo);
             }
         }
