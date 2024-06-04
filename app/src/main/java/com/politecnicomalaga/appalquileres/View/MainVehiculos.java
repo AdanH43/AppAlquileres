@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -18,6 +20,7 @@ import com.politecnicomalaga.appalquileres.Control.VehiculoAdapter;
 import com.politecnicomalaga.appalquileres.Model.Vehiculo;
 import com.politecnicomalaga.appalquileres.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainVehiculos extends AppCompatActivity {
@@ -34,7 +37,11 @@ public class MainVehiculos extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.rv_vehiculos);
         Button btnAddVehiculo = findViewById(R.id.btaddVehiculo);
+        String[] opcionesSpinner = getResources().getStringArray(R.array.tipo_vehiculo_array);
         spnTipoVehiculo = findViewById(R.id.spinnerTipoVehiculo);
+        ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opcionesSpinner);
+        adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnTipoVehiculo.setAdapter(adapterSpinner);
         edtBuscarMatricula = findViewById(R.id.edt_matricula);
 
         mVehiculosMap = MainController.getSingleton().getVehiculos();
@@ -50,19 +57,35 @@ public class MainVehiculos extends AppCompatActivity {
             }
         });
 
+        spnTipoVehiculo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String tipoVehiculo = parent.getItemAtPosition(position).toString();
+                mAdapter.filtrarPorTipo(tipoVehiculo);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                mAdapter.resetFilter();
+            }
+        });
+
         edtBuscarMatricula.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-            @Override
-            public void afterTextChanged(Editable s) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String filtro = s.toString().trim();
                 if (filtro.length() >= 3) {
                     mAdapter.filtrarPorMatricula(filtro);
                 }
+                else if (filtro.length() == 0) {
+                    mAdapter.resetFilter();
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
             }
         });
     }

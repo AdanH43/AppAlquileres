@@ -12,10 +12,4 @@
         <item>Furgón</item>
         <item>Camión</item>
     </string-array>
-
-    <string-array name="tipos_vehiculo">
-        <item>Coche</item>
-        <item>Furgón</item>
-        <item>Camión</item>
-    </string-array>
 </resources>

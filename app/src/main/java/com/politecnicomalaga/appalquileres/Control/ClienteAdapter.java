@@ -49,7 +49,7 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteViewHolder> {
 
     @Override
     public int getItemCount() {
-        return clientesList.size();
+        return clientesFiltrados.size();
     }
 
     public void updateData(HashMap<String, Cliente> hashMap) {
@@ -63,11 +63,18 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteViewHolder> {
             clientesFiltrados.addAll(clientesList);
         } else {
             for (Cliente cliente : clientesList) {
-                if (cliente.getApellidos().toLowerCase().contains(filtro)) {
+                if (cliente.getApellidos().toLowerCase().startsWith(filtro.toLowerCase())) {
                     clientesFiltrados.add(cliente);
                 }
             }
         }
         notifyDataSetChanged();
     }
+
+    public void resetFilter() {
+        clientesFiltrados.clear();
+        clientesFiltrados.addAll(clientesList);
+        notifyDataSetChanged();
+    }
+
 }

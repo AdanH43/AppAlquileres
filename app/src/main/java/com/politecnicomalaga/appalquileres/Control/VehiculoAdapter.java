@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.politecnicomalaga.appalquileres.Model.Camion;
+import com.politecnicomalaga.appalquileres.Model.Coche;
+import com.politecnicomalaga.appalquileres.Model.Furgon;
 import com.politecnicomalaga.appalquileres.Model.Vehiculo;
 import com.politecnicomalaga.appalquileres.R;
 
@@ -42,6 +45,8 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoViewHolder> {
         holder.setTvModelo(vehiculo.getModelo());
         holder.setTvMarca(vehiculo.getMarca());
         holder.setTvTipoMotor(vehiculo.getTipoMotor().name());
+        holder.setTvKmsRecorridos(String.valueOf(vehiculo.getKmsRecorridos()));
+        holder.setTvPrecioDia(String.valueOf(vehiculo.getPrecioDia()));
     }
 
     @Override
@@ -63,4 +68,22 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoViewHolder> {
         }
         notifyDataSetChanged();
     }
+    public void filtrarPorTipo(String tipoVehiculo) {
+        vehiculosFiltrados.clear();
+        for (Vehiculo vehiculo : vehiculoList) {
+            if (tipoVehiculo.equalsIgnoreCase("coche") && vehiculo instanceof Coche ||
+                    tipoVehiculo.equalsIgnoreCase("furgón") && vehiculo instanceof Furgon ||
+                    tipoVehiculo.equalsIgnoreCase("camión") && vehiculo instanceof Camion) {
+                vehiculosFiltrados.add(vehiculo);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+    public void resetFilter() {
+        vehiculosFiltrados.clear();
+        vehiculosFiltrados.addAll(vehiculoList);
+        notifyDataSetChanged();
+    }
+
 }

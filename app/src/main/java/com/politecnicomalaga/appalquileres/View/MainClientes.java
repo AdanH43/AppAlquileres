@@ -55,13 +55,16 @@ public class MainClientes extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String filtro = s.toString().toLowerCase().trim();
-                if (filtro.length() >= 3) {
+                if (filtro.length() >= 4) {
                     mAdapter.filtrarPorApellido(filtro);
                 }
+                else if (filtro.length() == 0) {
+                    mAdapter.resetFilter();
+                }
             }
-
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+            }
         });
 
     }

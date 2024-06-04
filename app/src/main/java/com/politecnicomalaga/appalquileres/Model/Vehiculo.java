@@ -1,8 +1,5 @@
 package com.politecnicomalaga.appalquileres.Model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Vehiculo {
     private String matricula;
     private String modelo;
