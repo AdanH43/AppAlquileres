@@ -56,10 +56,10 @@ public class MainClientes extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String filtro = s.toString().toLowerCase().trim();
                 if (filtro.length() >= 4) {
-                    mAdapter.filtrarPorApellido(filtro);
+                    mAdapter.filtrarApellido(filtro);
                 }
                 else if (filtro.length() == 0) {
-                    mAdapter.resetFilter();
+                    mAdapter.resetFiltro();
                 }
             }
             @Override

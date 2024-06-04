@@ -20,13 +20,12 @@ import com.politecnicomalaga.appalquileres.Control.VehiculoAdapter;
 import com.politecnicomalaga.appalquileres.Model.Vehiculo;
 import com.politecnicomalaga.appalquileres.R;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainVehiculos extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private VehiculoAdapter mAdapter;
-    private HashMap<String, Vehiculo> mVehiculosMap;
+    private HashMap<String, Vehiculo> mHashMap;
     private Spinner spnTipoVehiculo;
     private EditText edtBuscarMatricula;
 
@@ -44,11 +43,10 @@ public class MainVehiculos extends AppCompatActivity {
         adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnTipoVehiculo.setAdapter(adapterSpinner);
 
-
         edtBuscarMatricula = findViewById(R.id.edt_matricula);
 
-        mVehiculosMap = MainController.getSingleton().getVehiculos();
-        mAdapter = new VehiculoAdapter(this, mVehiculosMap);
+        mHashMap = new HashMap<>();
+        mAdapter = new VehiculoAdapter(this, mHashMap);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -64,12 +62,12 @@ public class MainVehiculos extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String tipoVehiculo = parent.getItemAtPosition(position).toString();
-                mAdapter.filtrarPorTipo(tipoVehiculo);
+                mAdapter.filtrarTipo(tipoVehiculo);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                mAdapter.resetFilter();
+                mAdapter.resetFiltro();
             }
         });
 
@@ -81,10 +79,10 @@ public class MainVehiculos extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String filtro = s.toString().trim();
                 if (filtro.length() >= 3) {
-                    mAdapter.filtrarPorMatricula(filtro);
+                    mAdapter.filtrarMatricula(filtro);
                 }
                 else if (filtro.length() == 0) {
-                    mAdapter.resetFilter();
+                    mAdapter.resetFiltro();
                 }
             }
             @Override

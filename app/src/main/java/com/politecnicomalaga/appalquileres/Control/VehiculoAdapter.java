@@ -59,7 +59,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoViewHolder> {
         vehiculosFiltrados = new ArrayList<>(vehiculoList);
     }
 
-    public void filtrarPorMatricula(String filtro) {
+    public void filtrarMatricula(String filtro) {
         vehiculosFiltrados.clear();
         for (Vehiculo vehiculo : vehiculoList) {
             if (vehiculo.getMatricula().toLowerCase().contains(filtro.toLowerCase())){
@@ -68,7 +68,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoViewHolder> {
         }
         notifyDataSetChanged();
     }
-    public void filtrarPorTipo(String tipoVehiculo) {
+    public void filtrarTipo(String tipoVehiculo) {
         vehiculosFiltrados.clear();
         for (Vehiculo vehiculo : vehiculoList) {
             if (tipoVehiculo.equalsIgnoreCase("coche") && vehiculo instanceof Coche || tipoVehiculo.equalsIgnoreCase("furgón") && vehiculo instanceof Furgon || tipoVehiculo.equalsIgnoreCase("camión") && vehiculo instanceof Camion) {
@@ -78,7 +78,7 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void resetFilter() {
+    public void resetFiltro() {
         vehiculosFiltrados.clear();
         vehiculosFiltrados.addAll(vehiculoList);
         notifyDataSetChanged();

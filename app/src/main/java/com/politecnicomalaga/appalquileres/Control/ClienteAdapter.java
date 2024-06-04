@@ -57,7 +57,7 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteViewHolder> {
         clientesFiltrados = new ArrayList<>(clientesList);
     }
 
-    public void filtrarPorApellido(String filtro) {
+    public void filtrarApellido(String filtro) {
         clientesFiltrados.clear();
             for (Cliente cliente : clientesList) {
                 if (cliente.getApellidos().toLowerCase().startsWith(filtro.toLowerCase())) {
@@ -68,7 +68,7 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void resetFilter() {
+    public void resetFiltro() {
         clientesFiltrados.clear();
         clientesFiltrados.addAll(clientesList);
         notifyDataSetChanged();
